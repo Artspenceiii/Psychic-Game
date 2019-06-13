@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Psychic Game</title>
+</head>
+<body>  
+    <script>
+var chances = 0;
+var computerGuesses = [];
+var wrongGuesses = [];
+var wins = 0;
+var losses = 0;
+
+var computerChoices = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+
+document.onkeyup = function(event) {
+    var userKeyPressed = event.key;
+
+    if (chances === 0) {
+        computerGuess = computerChoices[
+            Math.floor(
+                math.random() * computerChoices.length
+            )
+        ];
+    
+chances = 9;
+wrongGuesses = [];
+}
+
+    if (computerGuess !== userKeyPressed) {
+        if (wrongGuesses.indexOf(userKeyPressed) == -1
+        ) {
+            wrongGuesses.push(userKeyPressed);
+            chances--;
+            if (chances === 0) {
+                losses++;
+            }
+        }
+        console.log("chances: " + chnaces);
+    } else {
+        wins++;
+        chances = 0;
+    
+    console.log(wrongGuesses);
+        
+    }
+</script>
+</body>
+</html>
